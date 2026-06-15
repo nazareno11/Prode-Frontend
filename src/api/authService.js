@@ -9,4 +9,14 @@ const login = async (credentials) => {
     throw error;
   }
 };
-export { login };
+
+const register = async (credentials) => {
+  try {
+    const response = await api.post("/auth/register", credentials);
+    return response.data;
+  } catch (error) {
+    throw  error;
+    
+  }
+};
+export { login, register };
