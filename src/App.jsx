@@ -15,19 +15,6 @@ function App() {
 
                 <Route path="/" element={<Home />} />
 
-                <Route path="/ranking" element={<Ranking />} />
-
-                <Route path="/partidos" element={<Partidos />} />
-
-                <Route
-                    path="/perfil"
-                    element={
-                        <PrivateRoute>
-                            <Perfil />
-                        </PrivateRoute>
-                    }
-                />
-
             </Route>
 
             <Route

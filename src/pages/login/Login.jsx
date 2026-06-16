@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { login as loginService } from "../../api/authService";
 
-import useAuth from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
     const navigate = useNavigate();

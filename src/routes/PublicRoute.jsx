@@ -1,7 +1,7 @@
 //evitamos que el usuraio intente logearse dos veces
 
 import { Navigate } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import { useAuth } from "../hooks/useAuth";
 
 const PublicRoute = ({ children }) => {
 
