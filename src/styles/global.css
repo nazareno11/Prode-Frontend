@@ -1,0 +1,35 @@
+/*
+elementos del dom en general
+*/
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--color-background);
+
+    color:var(--color-text);
+
+}
+
+
+/*fondo (cancha)*/
+body{
+
+    background-color: var(--color-background);
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.03) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.03) 1px,
+            transparent 1px
+        );
+
+    background-size:120px 120px;
+
+}

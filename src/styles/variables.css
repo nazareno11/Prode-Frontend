@@ -1,0 +1,48 @@
+:root {
+
+    /* 
+        definicmos variables como colores, sombras, bordes, espacios,transiciones
+    */
+
+    --color-background: #0d1f0d;
+    --color-surface: #173617;
+    --color-primary: #2d6b2d;
+    --color-secondary: #7cb342;
+    --color-accent: #C9A84C;
+
+    --color-white: #ffffff;
+    --color-light: #e8e8e8;
+
+    --color-text: #ffffff;
+    --color-text-secondary: #d4d4d4;
+
+    --color-border: rgba(255,255,255,.15);
+
+    /*Sombras*/
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,.25);
+    --shadow-md: 0 5px 15px rgba(0,0,0,.35);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,.45);
+
+    /*Bordes*/
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 30px;
+
+    /*Espaciados*/
+
+    --spacing-xs: .5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /*Transiciones*/
+
+    --transition-fast: .2s ease;
+    --transition-normal: .35s ease;
+    --transition-slow: .6s ease;
+
+}
