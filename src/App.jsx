@@ -6,19 +6,29 @@ import Register from "./pages/register/Register";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 
-
+import MainLayout from "./layouts/MainLayout";
 function App() {
     return (
         <Routes>
 
-            <Route
-                path="/"
-                element={
-                    <PrivateRoute>
-                        <Home />
-                    </PrivateRoute>
-                }
-            />
+            <Route element={<MainLayout />}>
+
+                <Route path="/" element={<Home />} />
+
+                <Route path="/ranking" element={<Ranking />} />
+
+                <Route path="/partidos" element={<Partidos />} />
+
+                <Route
+                    path="/perfil"
+                    element={
+                        <PrivateRoute>
+                            <Perfil />
+                        </PrivateRoute>
+                    }
+                />
+
+            </Route>
 
             <Route
                 path="/login"

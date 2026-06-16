@@ -1,21 +1,19 @@
-import { Link } from "react-router-dom";
+import Hero from "../../components/hero/hero";
+
+import "./Home.css";
 
 const Home = () => {
+
     return (
+
         <>
-            <h1>Home</h1>
+            <Hero />
 
-            <Link to="/login">
-                Ir al Login
-            </Link>
-
-            <br />
-
-            <Link to="/register">
-                Registrarse
-            </Link>
+            <Features />
         </>
+
     );
+
 };
 
 export default Home;
