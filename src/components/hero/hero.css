@@ -71,3 +71,31 @@
     font-weight:600;
 
 }
+
+/*sol*/
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+
+    height:450px;
+
+    right:10%;
+
+    top:13%;
+
+    transform:translateY(-50%);
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        rgba(201,168,76,.22),
+        transparent 70%
+    );
+
+    filter:blur(60px);
+
+}

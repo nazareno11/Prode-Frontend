@@ -1,0 +1,146 @@
+/*contenedor*/
+.background-field{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+/*Linea del medio*/
+.field-line{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,.035);
+
+}
+
+/*centro*/
+.field-circle{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:260px;
+
+    height:260px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.035);
+
+}
+
+/*areas*/
+
+
+.left-area,
+.right-area{
+
+    position:absolute;
+
+    top:50%;
+
+    width:220px;
+
+    height:380px;
+
+    border:2px solid rgba(255,255,255,.04);
+
+    transform:translateY(-50%);
+
+}
+
+.left-area{
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:220px;
+
+    height:420px;
+
+    border:2px solid rgba(255,255,255,.035);
+
+    border-left:none;
+
+}
+.right-area{
+
+    position:absolute;
+
+    right:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:220px;
+
+    height:420px;
+
+    border:2px solid rgba(255,255,255,.035);
+
+    border-right:none;
+
+}
+/*areas chicas*/
+.left-small-area,
+.right-small-area{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:90px;
+
+    height:200px;
+
+    border:2px solid rgba(255,255,255,.035);
+
+}
+.left-small-area{
+
+    left:0;
+
+    border-left:none;
+
+}
+.right-small-area{
+
+    right:0;
+
+    border-right:none;
+
+}

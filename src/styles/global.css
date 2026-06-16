@@ -5,9 +5,17 @@ body{
 
     font-family:'Poppins',sans-serif;
 
-    background:var(--color-background);
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #0d1f0d,
+            #0d1f0d 90px,
+            #102510 90px,
+            #102510 180px
+        );
 
-    color:var(--color-text);
+    color: var(--color-white);
+
 
 }
 

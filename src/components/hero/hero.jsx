@@ -20,7 +20,7 @@ const Hero = () => {
 
                     <h1>
 
-                        Mundial Prode 2026
+                        Fifa World Cup 2026
 
                     </h1>
 
