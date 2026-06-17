@@ -1,58 +1,64 @@
-import { useForm } from "react-hook-form";
+import "../login/Login.css";
 
-import { useNavigate } from "react-router-dom";
-
-import { login as loginService } from "../../api/authService";
-
-import { useAuth } from "../../hooks/useAuth";
-
-const Login = () => {
-    const navigate = useNavigate();
-
-    const { login } = useAuth();
-
-    const { register, handleSubmit } = useForm();
-
-   const enviar = async (data) => {
-
-    try {
-
-        const response = await loginService(data);
-
-        login(response);
-
-        navigate("/");
-
-    } catch (error) {
-
-        console.log(error);
-
-    }
-
-    };
+const LoginForm = () => {
 
     return (
-        <form onSubmit={handleSubmit(enviar)}>
 
-            <input
-                type="email"
-                placeholder="Email"
-                {...register("email")}
-            />
+        <section className="login-container">
 
-            <input
-                type="password"
-                placeholder="Contraseña"
-                {...register("password")}
-            />
+            <div className="login-card">
 
-            <button type="submit">
-                Iniciar sesión
-            </button>
+                <h1>Bienvenido</h1>
 
-        </form>
+                <p>
+                    Iniciá sesión para comenzar a jugar el Prode Mundial 2026.
+                </p>
+
+                <form>
+
+                    <div className="input-group">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            placeholder="correo@ejemplo.com"
+                        />
+
+                    </div>
+
+                    <div className="input-group">
+
+                        <label>Contraseña</label>
+
+                        <input
+                            type="password"
+                            placeholder="********"
+                        />
+
+                    </div>
+
+                    <button
+                        className="login-btn"
+                        type="submit"
+                    >
+                        Empezar a jugar
+                    </button>
+
+                </form>
+
+                <span className="login-register">
+
+                    ¿No tenés cuenta?
+
+                </span>
+
+            </div>
+
+        </section>
+
     );
 
 };
 
-export default Login;
+export default LoginForm;
