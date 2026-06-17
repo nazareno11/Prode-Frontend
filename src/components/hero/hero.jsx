@@ -32,11 +32,13 @@ const Hero = () => {
 
                     </p>
 
-                    <button className="hero-button">
+                    <button className="hero-btn">
 
                         Comenzar ahora
 
-                    </button>
+                    </button><br/>
+                    <br/>
+                    
 
                 </div>
 

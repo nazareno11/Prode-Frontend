@@ -1,36 +1,58 @@
-.hero{ /*que ocupe casi toda la pantalla*/
+.hero{
 
-    min-height:calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
 
-    display:flex;
+    display: flex;
 
-    align-items:center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
 
 }
 
 .hero-container{
 
-    display:flex;
+    width: 100%;
 
-    justify-content:center;
+    display: flex;
 
-    align-items:center;
+    justify-content: center;
 
-    text-align:center;
+    align-items: center;
 
 }
+/*contenido*/
+.hero-content{
 
-.hero-content{ /*contenido*/
+    max-width: 800px;
 
-    max-width:800px;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 2;
 
 }
 
 .hero-logo{
 
-    width:220px;
+    display: block;
 
-    margin:0 auto 2rem;
+    width: 380px;
+
+    max-width: 100%;
+
+    margin-bottom: 30px;
+
+    animation: float 5s ease-in-out infinite;
+
+    filter: drop-shadow(0 0 18px rgba(201,168,76,.35));
 
 }
 
@@ -53,22 +75,125 @@
     margin-bottom:2.5rem;
 
 }
+/*boton*/
+.hero-btn{
+    position: relative;
+    overflow: hidden;
 
-.hero-button{ /*boton*/
+    display:inline-flex;
 
-    padding:1rem 2.5rem;
+    align-items:center;
+
+    gap:10px;
+
+    padding:16px 36px;
 
     border:none;
 
-    border-radius:999px;
+    border-radius:50px;
 
-    background:var(--color-accent);
+    background:linear-gradient(
+        135deg,
+        #2d6b2d,
+        #3d8a3d
+    );
+
+    color:white;
+
+    font-size:1.1rem;
+
+    font-weight:700;
 
     cursor:pointer;
 
-    font-size:1rem;
+    transition:.35s;
 
-    font-weight:600;
+    box-shadow:
+        0 0 18px rgba(45,107,45,.35);
+
+}
+.hero-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:80%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+}
+
+.hero-btn:hover::before{
+
+    left:150%;
+
+    transition:1s;
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+
+        0 0 25px rgba(124,179,66,.6),
+
+        0 0 50px rgba(124,179,66,.35);
+
+}
+.hero-btn:active{
+
+    transform:scale(.97);
+
+}
+.hero-btn{
+
+    animation:buttonPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes buttonPulse{
+
+    0%{
+
+        box-shadow:
+        0 0 18px rgba(45,107,45,.35);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 28px rgba(124,179,66,.7);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 18px rgba(45,107,45,.35);
+
+    }
 
 }
 
@@ -97,5 +222,41 @@
     );
 
     filter:blur(60px);
+
+}
+
+/*Animacion del logo */
+
+@keyframes float{
+
+    0%{
+
+        transform: translateY(0px) rotate(-2deg);
+
+    }
+
+    25%{
+
+        transform: translateY(-8px) rotate(-1deg);
+
+    }
+
+    50%{
+
+        transform: translateY(-14px) rotate(0deg);
+
+    }
+
+    75%{
+
+        transform: translateY(-8px) rotate(1deg);
+
+    }
+
+    100%{
+
+        transform: translateY(0px) rotate(-2deg);
+
+    }
 
 }
