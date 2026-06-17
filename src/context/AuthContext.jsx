@@ -3,7 +3,7 @@ guardamos el usuario que viene de la api con el jwt
 y con este contexto cualquier componente va a acceder a los datos
 tenemos que guardar user, token, login, logout
 */
-
+import * as authService from "../api/authService"
 
 import { createContext, useEffect, useState } from "react";
 
@@ -31,7 +31,9 @@ export const AuthProvider = ({ children }) => {
 
     }, []);
 
-    const login = (response) => {
+    const login = async (email, password) => {
+
+        const response = await authService.login({ email, password });
 
         setUser({
             username: response.username
@@ -39,8 +41,16 @@ export const AuthProvider = ({ children }) => {
 
         setToken(response.token);
 
-        localStorage.setItem("token", response.token);      // guardamos los datos en localstorage
+        localStorage.setItem("token", response.token);
         localStorage.setItem("username", response.username);
+
+        return response;
+
+    };
+
+    const register = async (userData) => {
+
+        return await authService.register(userData);
 
     };
 
@@ -54,14 +64,25 @@ export const AuthProvider = ({ children }) => {
 
     };
 
-    return (   
+    const isAuthenticated = !!token;
+
+    return (
         <AuthContext.Provider
+
             value={{
-                user,
-                token,
+
                 login,
-                logout
+
+                logout,
+
+                register,
+
+                isAuthenticated,
+
+                token
+
             }}
+
         >
             {children}
         </AuthContext.Provider>

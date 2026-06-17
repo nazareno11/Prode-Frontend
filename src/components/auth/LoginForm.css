@@ -175,3 +175,42 @@
     margin-top:8px;
 
 }
+
+
+.login-register{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    color:#d5d5d5;
+
+}
+
+.login-register a{
+
+    color:#C9A84C;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.login-register a:hover{
+
+    color:#FFD54F;
+
+    text-shadow:0 0 10px rgba(201,168,76,.5);
+
+}
+
+.login-card-margin-top{
+    margin-top: 150px;
+}

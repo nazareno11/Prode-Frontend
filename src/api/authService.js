@@ -2,21 +2,19 @@
 import api from "./axios";
 
 const login = async (credentials) => {
-  try {
+
     const response = await api.post("/auth/login", credentials);
+
     return response.data;
-  } catch (error) {
-    throw error;
-  }
+
 };
 
-const register = async (credentials) => {
-  try {
-    const response = await api.post("/auth/register", credentials);
+const register = async (user) => {
+
+    const response = await api.post("/auth/register", user);
+
     return response.data;
-  } catch (error) {
-    throw  error;
-    
-  }
+
 };
-export { login, register };
+
+export { login, register }; 

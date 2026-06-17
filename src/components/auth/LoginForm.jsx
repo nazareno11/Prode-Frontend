@@ -1,7 +1,7 @@
 import "./LoginForm.css";
 import { useForm } from "react-hook-form";
-import useAuth from "../../hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { useNavigate, Link } from "react-router-dom";
 
 const LoginForm = () => {
 
@@ -33,7 +33,7 @@ const LoginForm = () => {
 
         <section className="login-container">
 
-            <div className="login-card">
+            <div className="login-card login-card-margin-top">
 
                 <h1>Bienvenido</h1>
 
@@ -95,11 +95,17 @@ const LoginForm = () => {
 
                 </form>
 
-                <span className="login-register">
+                <div className="login-register">
 
-                    ¿No tenés cuenta?
+                    <span>¿No tenés cuenta?</span>
 
-                </span>
+                    <Link to="/register">
+
+                        Crear una cuenta
+
+                    </Link>
+
+                </div>
 
             </div>
 
