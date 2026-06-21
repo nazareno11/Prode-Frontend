@@ -19,7 +19,7 @@ const RegisterForm = () => {
         try {
 
             await registerUser({
-                nombre: data.username,
+                username: data.username,
                 email: data.email,
                 password: data.password
             });
