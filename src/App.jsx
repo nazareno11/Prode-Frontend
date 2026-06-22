@@ -5,6 +5,7 @@ import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
+import Perfil from "./pages/perfil/Perfil";
 
 import MainLayout from "./layouts/MainLayout";
 function App() {
@@ -32,6 +33,14 @@ function App() {
                         </PublicRoute>
                     }
                 />
+                <Route
+                    path="/perfil"
+                    element={
+                        <PrivateRoute>
+                            <Perfil />
+                        </PrivateRoute>
+                    }
+                />                
 
 
             </Route>

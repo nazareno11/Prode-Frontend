@@ -1,103 +1,69 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import logo from "../../assets/images/logo/a898cd470a8c75548b163a338339538c.png";
 
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
 
-    const { user, logout } = useAuth();
+  const navigate = useNavigate();
 
-    return (
+  const handleLogout = () => {
+    logout();
 
-        <header className="navbar">
+    navigate("/");
+  };
 
-            <div className="container navbar-container">
+  return (
+    <header className="navbar">
+      <div className="container navbar-container">
+        <Link to="/" className="logo">
+          <img src={logo} alt="Logo Mundial Prode" />
 
-                <Link to="/" className="logo">
+          <span>Mundial Prode</span>
+        </Link>
 
-                    <img
-                        src={logo}
-                        alt="Logo Mundial Prode"
-                    />
+        <nav>
+          <ul className="nav-links">
+            <NavLink to="/">Inicio</NavLink>
 
-                    <span>Mundial Prode</span>
+            <li>
+              <Link to="/ranking">Ranking</Link>
+            </li>
 
-                </Link>
+            <li>
+              <Link to="/partidos">Partidos</Link>
+            </li>
+          </ul>
+        </nav>
 
-                <nav>
+        <div className="nav-actions">
+          {user ? (
+            <>
+              <Link to="/perfil" className="welcome">
+                Hola, {user.username}
+              </Link>
 
-                    <ul className="nav-links">
+              <button className="btn logout-btn" onClick={handleLogout}>
+                Cerrar sesión
+              </button>
+            </>
+          ) : (
+            /* o */
 
-                        <li>
-                            <Link to="/">Inicio</Link>
-                        </li>
+            <>
+              <Link to="/login">Iniciar sesión</Link>
 
-                        <li>
-                            <Link to="/ranking">Ranking</Link>
-                        </li>
-
-                        <li>
-                            <Link to="/partidos">Partidos</Link>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-                <div className="nav-actions">
-
-                    {
-                        user ?
-
-                        <>
-
-                            <span className="welcome">
-
-                                Hola, {user.username}
-
-                            </span>
-
-                            <button
-                                className="btn logout-btn"
-                                onClick={logout}
-                            >
-                                Cerrar sesión
-                            </button>
-
-                        </>
-
-                        : /* o */ 
-
-                        <>
-
-                            <Link to="/login">
-
-                                Iniciar sesión
-
-                            </Link>
-
-                            <Link
-                                className="btn register-btn"
-                                to="/register"
-                            >
-
-                                Registrarse
-
-                            </Link>
-
-                        </>
-
-                    }
-
-                </div>
-
-            </div>
-
-        </header>
-
-    );
-
+              <Link className="btn register-btn" to="/register">
+                Registrarse
+              </Link>
+            </>
+          )}
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;
