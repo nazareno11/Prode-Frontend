@@ -3,7 +3,9 @@ guardamos el usuario que viene de la api con el jwt
 y con este contexto cualquier componente va a acceder a los datos
 tenemos que guardar user, token, login, logout
 */
-import * as authService from "../api/authService"
+import * as authService from "../api/authService" // auth
+
+import * as userService from "../api/userService"; // perfil 
 
 import { createContext, useEffect, useState } from "react";
 
@@ -16,18 +18,31 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
 
-    const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
+        const loadUser = async () => {
 
-    if (token && username) {
+            const token = localStorage.getItem("token");
 
-        setToken(token);
+            if (!token) return;
 
-        setUser({
-            username
-        });
+            try {
 
-    }
+                setToken(token);
+
+                const profile = await userService.getProfile();
+
+                setUser(profile);
+
+            } catch (error) {
+
+                console.error(error);
+
+                localStorage.removeItem("token");
+                localStorage.removeItem("username");
+
+            }
+        };
+
+        loadUser();
 
     }, []);
 
@@ -35,17 +50,15 @@ export const AuthProvider = ({ children }) => {
 
         const response = await authService.login({ email, password });
 
-        setUser({
-            username: response.username
-        });
-
         setToken(response.token);
 
         localStorage.setItem("token", response.token);
-        localStorage.setItem("username", response.username);
+
+        const profile = await userService.getProfile();
+
+        setUser(profile);
 
         return response;
-
     };
 
     const register = async (userData) => {

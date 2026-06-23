@@ -15,7 +15,7 @@ const ProfileCard = () => {
         <div className="profile-info">
           <h1>{user?.username}</h1>
 
-          <p>✉ usuario@prode.com</p>
+          <p>✉ {user?.email}</p>
 
           <span>Jugador del Prode Mundial 2026</span>
         </div>
@@ -35,7 +35,7 @@ const ProfileCard = () => {
 
           <h3>0</h3>
 
-          <p>Puntos</p>
+          <h3>{user?.puntosTotales ?? 0}</h3>
         </div>
 
         <div className="stat-card">
@@ -43,7 +43,7 @@ const ProfileCard = () => {
 
           <h3>0</h3>
 
-          <p>Aciertos</p>
+          <h3>{user?.plenosAcertados ?? 0}</h3>
         </div>
 
         <div className="stat-card">
