@@ -15,6 +15,14 @@ export const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
+   
+    const updateUser = (newData) => {
+    setUser(prev => ({
+        ...prev,
+        ...newData
+    }));
+    };
+    
 
     useEffect(() => {
 
@@ -85,6 +93,7 @@ export const AuthProvider = ({ children }) => {
             value={{
 
                 user,
+                updateUser,
                 token,
 
                 login,

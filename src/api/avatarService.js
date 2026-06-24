@@ -1,10 +1,4 @@
-//traemos los datos de la api para el perfil
 import api from "./axios";
-
-export const getProfile = async () => {
-  const response = await api.get("/users/me");
-  return response.data;
-};
 
 export const getAvatars = async () => {
   const response = await api.get("/avatars");
@@ -12,7 +6,7 @@ export const getAvatars = async () => {
 };
 
 export const updateAvatar = async (avatarName) => {
-  return await api.patch("/users/me/avatar", {
+  await api.patch("/users/me/avatar", {
     avatar: avatarName
   });
 };

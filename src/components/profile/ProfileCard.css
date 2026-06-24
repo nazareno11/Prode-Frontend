@@ -168,3 +168,115 @@
     color:#C9A84C;
 
 }
+
+/*Avatar*/
+
+.profile-avatar-container{
+
+    position:relative;
+
+    width:110px;
+
+    height:110px;
+
+}
+
+.profile-avatar-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:3px solid #C9A84C;
+
+}
+
+/*Boton de editar avatar*/
+
+.edit-avatar-btn{
+
+    position:absolute;
+
+    bottom:0;
+
+    right:0;
+
+    width:32px;
+
+    height:32px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#C9A84C;
+
+}
+/*modal para cambiar el avatar*/
+
+.avatar-modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+}
+.avatar-modal{
+
+    width:600px;
+
+    padding:2rem;
+
+    border-radius:20px;
+
+    background:#121212;
+}
+
+/*grid*/
+.avatar-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:1rem;
+
+    margin-top:1.5rem;
+}
+
+/*avatar seleccionable */
+.avatar-option{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.avatar-option:hover{
+
+    transform:scale(1.08);
+
+    border:3px solid #C9A84C;
+}   
