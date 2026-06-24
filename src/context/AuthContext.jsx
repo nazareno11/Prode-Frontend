@@ -28,13 +28,16 @@ export const AuthProvider = ({ children }) => {
 
         const loadUser = async () => {
 
-            const token = localStorage.getItem("token");
+            const storedToken = localStorage.getItem("token");
 
-            if (!token) return;
+            if (!storedToken) {
+                setLoading(false);
+                return;
+            }
 
             try {
 
-                setToken(token);
+                setToken(storedToken);
 
                 const profile = await userService.getProfile();
 
@@ -45,7 +48,10 @@ export const AuthProvider = ({ children }) => {
                 console.error(error);
 
                 localStorage.removeItem("token");
-                localStorage.removeItem("username");
+
+            } finally {
+
+                setLoading(false);
 
             }
         };
@@ -80,9 +86,19 @@ export const AuthProvider = ({ children }) => {
         setUser(null);
         setToken(null);
 
-        localStorage.removeItem("token");// borramos el almacenamiento del localstorage
-        localStorage.removeItem("username");
+        localStorage.removeItem("token"); // borramos el almacenamiento del localstorage
 
+    };
+
+    // permite refrescar el perfil sin tener que relogear
+    // util despues de editar datos del usuario (puntos, ranking, etc)
+    const refreshProfile = async () => {
+
+        const profile = await userService.getProfile();
+
+        setUser(profile);
+
+        return profile;
     };
 
     const isAuthenticated = !!token;
@@ -95,10 +111,12 @@ export const AuthProvider = ({ children }) => {
                 user,
                 updateUser,
                 token,
+                loading,
 
                 login,
                 logout,
                 register,
+                refreshProfile,
 
                 isAuthenticated
 
