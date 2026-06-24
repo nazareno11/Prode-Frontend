@@ -7,7 +7,7 @@ const AvatarSelector = ({ onClose }) => {
 
   const [avatars, setAvatars] = useState([]);
 
-  const { user, setUser } = useAuth();
+  const { user, updateUser } = useAuth();
 
   useEffect(() => {
 
