@@ -42,7 +42,6 @@ const ProfileCard = () => {
         <div className="stat-card">
           <span>🎯</span>
           <h3>{user?.cantidadPronosticos ?? 0}</h3>
-          <h3>{user?.cantidadPronosticos ?? 0}</h3>
           <p>Pronósticos</p>
           
         </div>
