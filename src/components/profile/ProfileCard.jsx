@@ -24,32 +24,33 @@ const ProfileCard = () => {
       <div className="profile-stats">
         <div className="stat-card">
           <span>🎯</span>
-
-          <h3>0</h3>
-
+          <h3>{user?.cantidadPronosticos ?? 0}</h3>
           <p>Pronósticos</p>
+          
         </div>
 
         <div className="stat-card">
           <span>🏆</span>
 
-          <h3>0</h3>
+        
 
           <h3>{user?.puntosTotales ?? 0}</h3>
+          <p>Puntos totales</p>
         </div>
 
         <div className="stat-card">
           <span>✅</span>
 
-          <h3>0</h3>
+          
 
           <h3>{user?.plenosAcertados ?? 0}</h3>
+          <p>Plenos acertados</p>
         </div>
 
         <div className="stat-card">
           <span>👥</span>
 
-          <h3>0</h3>
+          <h3>{user?.cantidadGrupos ?? 0}</h3>
 
           <p>Grupos</p>
         </div>
@@ -65,7 +66,7 @@ const ProfileCard = () => {
         <div className="extra-card">
           <h3>🏅 Ranking actual</h3>
 
-          <p>#--</p>
+          <p>#{user?.ranking ?? "--"}</p>
         </div>
       </div>
     </div>
