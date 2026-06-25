@@ -1,0 +1,93 @@
+.ranking-page{
+
+    max-width:1000px;
+
+    margin:120px auto;
+
+    padding:2rem;
+
+}
+
+.ranking-page h1{
+
+    text-align:center;
+
+    margin-bottom:3rem;
+
+}
+
+/* tabla */
+
+.ranking-table{
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(201,168,76,.2);
+
+}
+
+.ranking-header{
+
+    display:grid;
+
+    grid-template-columns:
+        80px
+        1fr
+        120px
+        120px;
+
+    padding:1.2rem;
+
+    background:rgba(201,168,76,.12);
+
+    font-weight:700;
+
+}
+
+.ranking-row{
+
+    display:grid;
+
+    grid-template-columns:
+        80px
+        1fr
+        120px
+        120px;
+
+    padding:1rem 1.2rem;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+.ranking-row:hover{
+
+    background:rgba(255,255,255,.04);
+
+}
+
+.top-three{
+
+    font-weight:700;
+
+    color:#FFD54F;
+
+}
+
+/*Si el user esta logueado se resalta en el ranking*/
+
+.current-user{
+
+    background:
+        rgba(124,179,66,.15);
+
+    border-left:
+        4px solid #7cb342;
+
+}
