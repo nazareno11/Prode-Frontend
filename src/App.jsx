@@ -8,6 +8,7 @@ import PublicRoute from "./routes/PublicRoute";
 import Perfil from "./pages/perfil/Perfil";
 
 import MainLayout from "./layouts/MainLayout";
+import Partidos from "./pages/partido/Partidos";
 function App() {
     return (
         <Routes>
@@ -40,7 +41,12 @@ function App() {
                             <Perfil />
                         </PrivateRoute>
                     }
-                />                
+                />  
+
+                <Route
+                    path="/partidos"
+                    element={<Partidos />}
+                />              
 
 
             </Route>
