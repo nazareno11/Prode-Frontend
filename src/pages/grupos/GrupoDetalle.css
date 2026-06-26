@@ -1,0 +1,87 @@
+.grupo-detalle-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.grupo-detalle-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.volver-btn {
+  background: none;
+  border: none;
+  color: #C9A84C;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  padding: 0;
+}
+
+.volver-btn:hover {
+  text-decoration: underline;
+}
+
+.grupo-detalle-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-detalle-error {
+  text-align: center;
+  padding: 1.5rem;
+  color: #cfcfcf;
+}
+
+.grupo-detalle-error button {
+  margin-top: 0.8rem;
+  background: #C9A84C;
+  color: #163016;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ranking-tabla {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  overflow: hidden;
+}
+
+.ranking-header,
+.ranking-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 90px 90px;
+  align-items: center;
+  padding: 0.9rem 1.2rem;
+}
+
+.ranking-header {
+  background: rgba(201, 168, 76, 0.1);
+  color: #C9A84C;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ranking-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #e8e8e8;
+}
+
+.ranking-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.col-pos {
+  font-weight: 600;
+  text-align: center;
+}
+
+.col-puntos,
+.col-plenos {
+  text-align: center;
+}

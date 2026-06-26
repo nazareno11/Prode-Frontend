@@ -119,6 +119,12 @@
 
 }
 
+.stat-card--clickeable{
+
+    cursor:pointer;
+
+}
+
 .stat-card span{
 
     font-size:2rem;
@@ -279,4 +285,4 @@
     transform:scale(1.08);
 
     border:3px solid #C9A84C;
-}   
+}

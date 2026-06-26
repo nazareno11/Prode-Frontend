@@ -1,11 +1,13 @@
 import { useAuth } from "../../hooks/useAuth";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AvatarSelector from "./AvatarSelector";
 
 import "../profile/ProfileCard.css";
 
 const ProfileCard = () => {
   const { user, updateUser } = useAuth();
+  const navigate = useNavigate();
 
   const [showSelector, setShowSelector] = useState(false);
 
@@ -58,7 +60,11 @@ const ProfileCard = () => {
           <p>Plenos</p>
         </div>
 
-        <div className="stat-card">
+        <div
+          className="stat-card stat-card--clickeable"
+          onClick={() => navigate("/grupos")}
+          title="Ver mis grupos"
+        >
           <span>👥</span>
           <h3>{user?.cantidadGrupos ?? 0}</h3>
           <p>Grupos</p>

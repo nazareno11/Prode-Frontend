@@ -10,6 +10,9 @@ import Ranking from "./pages/ranking/Ranking";
 
 import MainLayout from "./layouts/MainLayout";
 import Partidos from "./pages/partido/Partidos";
+
+import Grupos from "./pages/grupos/Grupos";
+import GrupoDetalle from "./pages/grupos/GrupoDetalle";
 function App() {
     return (
         <Routes>
@@ -55,6 +58,23 @@ function App() {
                         </PublicRoute>
                     }
                 />
+                <Route
+                    path="/grupos"
+                    element={
+                        <PrivateRoute>
+                            <Grupos />
+                        </PrivateRoute>
+                    }
+                />
+ 
+                <Route
+                    path="/grupos/:id"
+                    element={
+                        <PrivateRoute>
+                            <GrupoDetalle />
+                        </PrivateRoute>
+                    }
+                />                
 
             </Route>
 
