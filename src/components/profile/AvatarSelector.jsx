@@ -33,16 +33,18 @@ const AvatarSelector = ({ onClose }) => {
     };
 
   return (
-    <div className="avatar-modal">
+    <div className="avatar-modal-overlay" onClick={onClose}>
 
-      <div className="avatar-modal-content">
+      <div
+        className="avatar-modal"
+        onClick={(e) => e.stopPropagation()}
+      >
 
         <h2>Elegí tu avatar</h2>
 
         <div className="avatar-grid">
 
           {avatars.map((avatar) => (
-
             <img
               key={avatar.name}
               src={avatar.url}
@@ -50,7 +52,6 @@ const AvatarSelector = ({ onClose }) => {
               className="avatar-option"
               onClick={() => handleSelectAvatar(avatar)}
             />
-
           ))}
 
         </div>

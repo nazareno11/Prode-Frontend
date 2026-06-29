@@ -3,6 +3,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AvatarSelector from "./AvatarSelector";
 
+import {
+  FaBullseye,
+  FaTrophy,
+  FaCheckCircle,
+  FaUsers,
+  FaCamera,
+  FaChartLine
+} from "react-icons/fa";
+
 import "../profile/ProfileCard.css";
 
 const ProfileCard = () => {
@@ -11,9 +20,17 @@ const ProfileCard = () => {
 
   const [showSelector, setShowSelector] = useState(false);
 
-  const avatarUrl = user?.avatar
-    ? `/avatars/${user.avatar.toLowerCase()}.png`
-    : "/avatars/default.png";
+  const getAvatarUrl = (avatar) => {
+    if (!avatar) return "/avatars/default.png";
+
+    if (avatar.startsWith("/avatars/") || avatar.startsWith("http")) {
+      return avatar;
+    }
+
+    return `/avatars/${avatar.toLowerCase()}.png`;
+  };
+
+  const avatarUrl = getAvatarUrl(user?.avatar);
 
   return (
     <div className="profile-card">
@@ -21,7 +38,7 @@ const ProfileCard = () => {
 
         <div className="profile-avatar-container">
 
-          <img src={avatarUrl} alt="avatar" />
+          <img src={avatarUrl} alt="avatar" className="profile-avatar-image" />
 
           <button
             className="edit-avatar-btn"
@@ -35,39 +52,39 @@ const ProfileCard = () => {
         <div className="profile-info">
           <h1>{user?.username}</h1>
           <p>✉ {user?.email}</p>
-          <span>Jugador del Prode Mundial 2026</span>
+          <span>Jugador</span>
         </div>
 
       </div>
 
       <div className="profile-stats">
         <div className="stat-card">
-          <span>🎯</span>
+          <FaBullseye className="stat-icon" />
           <h3>{user?.cantidadPronosticos ?? 0}</h3>
           <p>Pronósticos</p>
           
         </div>
 
         <div className="stat-card">
-          <span>🏆</span>
+          <FaTrophy className="stat-icon" />
           <h3>{user?.puntosTotales ?? 0}</h3>
           <p>Puntos</p>
         </div>
 
         <div className="stat-card">
-          <span>✅</span>
+          <FaCheckCircle className="stat-icon" />
           <h3>{user?.plenosAcertados ?? 0}</h3>
           <p>Plenos</p>
         </div>
 
         <div
           className="stat-card stat-card--clickeable"
-          onClick={() => navigate("/grupos")}
+          onClick={() => navigate("/grupos")} 
           title="Ver mis grupos"
         >
-          <span>👥</span>
+          <FaUsers className="stat-icon" />
           <h3>{user?.cantidadGrupos ?? 0}</h3>
-          <p>Grupos</p>
+          <p>Mis grupos</p>
         </div>
       </div>
 
@@ -78,7 +95,7 @@ const ProfileCard = () => {
         </div>
 
         <div className="extra-card">
-          <h3>🏅 Ranking actual</h3>
+          <h3><FaChartLine /> Ranking actual</h3>
           <p>#{user?.ranking ?? "--"}</p>
         </div>
       </div>

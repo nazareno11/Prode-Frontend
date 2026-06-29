@@ -229,28 +229,49 @@
 .avatar-modal-overlay{
 
     position:fixed;
-
     inset:0;
 
-    background:rgba(0,0,0,.7);
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    z-index:999;
+    background:transparent
+
+   
 }
 .avatar-modal{
 
-    width:600px;
+    width:min(650px,90vw);
 
     padding:2rem;
 
     border-radius:20px;
 
-    background:#121212;
+    background:#1b1b1b;
+
+    border:1px solid rgba(201,168,76,.25);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+    
+}
+/*animacion*/
+.avatar-modal{
+
+    animation: popup .25s ease;
+}
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
 }
 
 /*grid*/
@@ -285,4 +306,68 @@
     transform:scale(1.08);
 
     border:3px solid #C9A84C;
+}
+
+.profile-avatar-image{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+.stat-card{
+
+    text-align:center;
+
+    padding:1.6rem;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#C9A84C;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25),
+        0 0 20px rgba(201,168,76,.18);
+}
+
+.stat-icon{
+
+    font-size:2rem;
+
+    color:#C9A84C;
+
+    margin-bottom:.6rem;
+}
+
+.profile-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:2rem;
+
+    padding-bottom:2rem;
+
+    margin-bottom:2rem;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.extra-card p{
+
+    font-size:1.5rem;
+
+    font-weight:600;
 }
