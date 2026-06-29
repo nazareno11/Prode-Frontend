@@ -25,25 +25,25 @@ const Navbar = () => {
         </Link>
 
         <nav>
-          <ul className="nav-links">
+          <ul className="nav-links ">
             <NavLink to="/">Inicio</NavLink>
 
             <li>
-              <Link to="/ranking">Ranking</Link>
+              <NavLink to="/ranking" className="nav-link-effect">Ranking </NavLink>
             </li>
 
             <li>
-              <Link to="/partidos">Partidos</Link>
+              <NavLink to="/partidos" className="nav-link-effect"> Partidos </NavLink>
             </li>
           </ul>
         </nav>
 
-        <div className="nav-actions">
+        <div className="nav-actions nav-links">
           {user ? (
             <>
-              <Link to="/perfil" className="welcome">
+              <NavLink to="/perfil" className="welcome">
                 Hola, {user.username}
-              </Link>
+              </NavLink>
 
               <button className="btn logout-btn" onClick={handleLogout}>
                 Cerrar sesión

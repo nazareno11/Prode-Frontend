@@ -155,9 +155,10 @@ const MatchCard = ({ partido, pronostico, onGuardarPronostico }) => {
   return (
     <article className="match-card">
       <div className="match-teams">
-        <div className="team">
-          <img src={partido.escudoLocal} alt={partido.equipoLocal} />
+
+        <div className="team team-local">
           <span>{partido.equipoLocal}</span>
+          <img src={partido.escudoLocal} alt={partido.equipoLocal} />
         </div>
 
         <div className="match-center">{renderCentro()}</div>

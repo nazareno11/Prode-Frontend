@@ -84,7 +84,7 @@ const ProfileCard = () => {
         >
           <FaUsers className="stat-icon" />
           <h3>{user?.cantidadGrupos ?? 0}</h3>
-          <p>Mis grupos</p>
+          <p>Ver mis grupos</p>
         </div>
       </div>
 

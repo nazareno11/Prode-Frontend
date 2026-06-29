@@ -22,7 +22,7 @@ const Ranking = () => {
 
   return (
     <section className="ranking-page">
-      <h1>🏆 Ranking Mundial Prode 2026</h1>
+      <h1>Ranking Mundial Prode 2026</h1>
 
       <div className="ranking-table">
         <div className="ranking-header">

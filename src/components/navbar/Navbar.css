@@ -172,3 +172,29 @@
 .nav-links a.active {
     color:#C9A84C;
 }
+
+.logout-btn{
+
+    background:transparent;
+
+    border:1px solid var(--color-accent);
+
+    color:white;
+
+    padding:.7rem 1.2rem;
+
+    border-radius:30px;
+
+    transition:.3s;
+}
+
+.logout-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(201,168,76,.12);
+
+    border-color:#C9A84C;
+
+    box-shadow:0 0 15px rgba(201,168,76,.25);
+}
