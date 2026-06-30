@@ -58,10 +58,14 @@ const ProfileCard = () => {
       </div>
 
       <div className="profile-stats">
-        <div className="stat-card">
+        <div
+          className="stat-card stat-card--clickeable"
+          onClick={() => navigate("/mis-pronosticos")}
+          title="Ver mis pronósticos"
+        >
           <FaBullseye className="stat-icon" />
           <h3>{user?.cantidadPronosticos ?? 0}</h3>
-          <p>Pronósticos</p>
+          <p>Ver mis pronósticos</p>
           
         </div>
 

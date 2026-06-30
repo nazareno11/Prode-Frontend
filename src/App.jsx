@@ -13,6 +13,7 @@ import Partidos from "./pages/partido/Partidos";
 
 import Grupos from "./pages/grupos/Grupos";
 import GrupoDetalle from "./pages/grupos/GrupoDetalle";
+import MisPronosticos from "./pages/pronosticos/Mispronosticos";
 function App() {
     return (
         <Routes>
@@ -75,6 +76,15 @@ function App() {
                         </PrivateRoute>
                     }
                 />                
+
+                <Route
+                    path="/mis-pronosticos"
+                    element={
+                        <PrivateRoute>
+                            <MisPronosticos />
+                        </PrivateRoute>
+                    }
+                />
 
             </Route>
 
