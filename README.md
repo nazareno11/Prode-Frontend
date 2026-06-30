@@ -1,16 +1,57 @@
-# React + Vite
+# Prode Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend del Prode del Mundial, hecho en React + Vite. Consume la API REST del backend (Spring Boot), que es donde está la documentación principal del proyecto (endpoints, modelos, reglas de negocio).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite
+- React Router
+- Axios
+- react-icons
 
-## React Compiler
+## Requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 18+
+- El backend corriendo en `http://localhost:8080` (ver `src/api/axios.js` si necesitás cambiar la URL base)
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+La app queda disponible en `http://localhost:5173`.
+
+## Scripts
+
+- `npm run dev` — entorno de desarrollo
+- `npm run build` — build de producción
+- `npm run preview` — preview del build
+- `npm run lint` — linting
+
+## Estructura
+
+```
+src/
+├── api/            # servicios que llaman a la API (axios)
+├── components/     # componentes reutilizables (MatchCard, ProfileCard, Navbar, etc)
+├── context/        # AuthContext
+├── hooks/          # useAuth
+├── layouts/        # MainLayout
+├── pages/          # vistas por ruta (partidos, grupos, pronósticos, perfil, ranking)
+├── routes/         # PrivateRoute / PublicRoute
+└── styles/         # estilos globales y variables
+```
+
+## Funcionalidades principales
+
+- **Login / Registro** de usuarios
+- **Partidos**: listado agrupado por grupo del torneo
+- **Pronósticos**: crear/editar pronósticos de partidos `POR_JUGARSE` (bloqueados 30 min antes del inicio), consulta de "Mis Pronósticos" con filtro por estado
+- **Grupos**: crear grupo, unirse con código de invitación, ranking por grupo
+- **Perfil**: avatar, estadísticas del usuario, accesos rápidos a grupos y pronósticos
+
+## Autenticación
+
+El token JWT se guarda en `localStorage` y se envía automáticamente en cada request vía interceptor de Axios. Si el back devuelve `401`, la sesión se cierra y redirige a `/login`.

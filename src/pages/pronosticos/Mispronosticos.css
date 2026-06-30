@@ -1,0 +1,73 @@
+.mis-pronosticos-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.mis-pronosticos-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.pronosticos-tabs {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.04);
+  color: #cfcfcf;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tab-btn--activo {
+  background: #C9A84C;
+  color: #163016;
+  border-color: #C9A84C;
+  font-weight: 700;
+}
+
+.pronosticos-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.pronosticos-error {
+  text-align: center;
+  padding: 1.5rem;
+  color: #cfcfcf;
+}
+
+.pronosticos-error button {
+  margin-top: 0.8rem;
+  background: #C9A84C;
+  color: #163016;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pronosticos-vacio {
+  color: #cfcfcf;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.pronosticos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
